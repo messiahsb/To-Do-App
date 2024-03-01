@@ -16,16 +16,16 @@
             <h1>To Do List</h1>
         </div>
         <div class="box">
-            <div class="inputBox">
+            <div class="inputContainer">
                 <input type="text" id="todoItem" placeholder="Add an Item to your List!">
                 <button onclick="addElement()" id="addItem">Add</button>
             </div>
             <div class="checkboxes">
-                <ul>
-                    <li><input type="checkbox"><div class="checkItem">Item 1</div><button class="delete">DELETE</button></li>
-                    <li><input type="checkbox"><div class="checkItem">Item 2</div><button class="delete">DELETE</button></li>
-                    <li><input type="checkbox"><div class="checkItem">Item 3</div><button class="delete">DELETE</button></li>
-                    <li><input type="checkbox"><div class="checkItem">Item 4</div><button class="delete">DELETE</button></li>
+                <ul id="checklist">
+                    <li><input type="checkbox"><div class="checkItem">Item 1</div><button onclick="return this.parentNode.remove()" class="delete">DELETE</button></li>
+                    <li><input type="checkbox"><div class="checkItem">Item 2</div><button onclick="return this.parentNode.remove()" class="delete">DELETE</button></li>
+                    <li><input type="checkbox"><div class="checkItem">Item 3</div><button onclick="return this.parentNode.remove()" class="delete">DELETE</button></li>
+                    <li><input type="checkbox"><div class="checkItem">Item 4</div><button onclick="return this.parentNode.remove()" class="delete">DELETE</button></li>
                 </ul>
             </div>
         </div>

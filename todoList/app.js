@@ -1,22 +1,33 @@
-const todoItem = document.getElementById('todoItem')
+const newItem = document.getElementById('todoItem')
+const checklist = document.getElementById('checklist')
 
+function addElement() {
+    let newListItem = document.createElement("li");
 
-const todoList = document.getElementByclass('checkboxes')
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
 
+    let deleteButton = document.createElement("button");
+    deleteButton.className = "delete";
+    deleteButton.textContent = "DELETE"; 
+    deleteButton.addEventListener("click", () => deleteButton.parentElement.remove());
 
+    let itemDiv = document.createElement("div");
+    itemDiv.className = "checkItem";
+    let itemValue = newItem.value;
+    
+    if (itemValue !== '') {
+        itemDiv.textContent = itemValue; 
+        newListItem.appendChild(checkbox);
+        newListItem.appendChild(itemDiv);
+        newListItem.appendChild(deleteButton);
 
-function addElement(){
-    let li = document.createElement("li");
-    let itemValue = todoItem.value;
-
-    if(itemValue === ""){
-        alert("Enter An Item!");
+        checklist.appendChild(newListItem);
+        
+        todoItem.value = "";
     }
-    else{
-       li.textContent = itemValue;
-       todoList.appendChild(li);
-       todoItem.value = ""; 
-    }
+
+   
 
 
 }
